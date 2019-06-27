@@ -1,22 +1,17 @@
 
+def is_even(num):
+        return num % 2 == 0
+
 def even_number_of_evens(numbers):
         evens = 0
-
         for i in numbers:                
-                if i %2 == 0:
-                        evens+=1
-
-        if len(numbers) == 0:
-                return False
+                if is_even(i):
+                        evens+=1        
 
         if evens == 0:
                 return False
-
-        elif evens %2 == 0:
-                return True
-
-        elif evens %2 != 0:
-               return False   
+        else :
+                return is_even(evens)   
 
 assert even_number_of_evens([]) == False, "No numbers"
 assert even_number_of_evens([2, 4]) == True, "Two even numbers"
